@@ -1,0 +1,10 @@
+<div class="b-gestion ">
+    <div class="e-gestion d-flex">
+        <div class="c-form">
+            <app-form (nombre)="nombre = $event" (precio)="precio = $event" (descripcion)="descripcion = $event" (imagen)="imagen = $event" (rating)="rating = $event"></app-form>
+        </div>
+        <div class="c-form">
+            <app-card [products]="editable" [nombre]="nombre" [precio]="precio" [descripcion]="descripcion" [imagen]="imagen" [rating]="rating"></app-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class=" c-card" *ngFor="let prod of products">
+    <figure  class="c-gallery__figure">
+        <img class="c-gallery__img" src="{{imagen === undefined ? prod.image : imagen}}"
+            alt="{{ nombre === undefined ? prod.name : nombre}}">
+        <figcaption class="c-gallery__figcaption">{{ nombre === undefined ? prod.name : nombre}}</figcaption>
+    </figure>
+    <p class="c-gallery__number">${{precio === undefined ? prod.price : precio}}</p>
+    <div class="card-footer">
+        <small class="c-gallery__text">{{descripcion === undefined ? prod.description: descripcion}}</small>
+    </div>
+    <div>
+        <p-rating class="product__info--rating" readonly="true" [cancel]="false"
+            [iconOnStyle]="{'color': '#FB8200', 'font-size': '11px'}"
+            [iconOffStyle]="{'color':'#FB8200', 'font-size': '11px'}" [ngModel]="val"></p-rating>
+        <div>
+            <p class="card-text">{{rating === undefined ? prod.stars: rating}}</p>
+        </div>
+
+    </div>
+</div>

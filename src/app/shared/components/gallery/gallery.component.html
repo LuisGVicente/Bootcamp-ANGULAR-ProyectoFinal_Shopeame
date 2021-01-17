@@ -1,0 +1,49 @@
+<div class="c-gallery">
+    <div class="card-group row-cols-3">
+        <div class=" c-card" *ngFor="let prod of products">
+            <figure routerLink="/{{url}}/{{prod.id}}" class="c-gallery__figure">
+                <img class="c-gallery__img" src="{{imagen === undefined ? prod.image : imagen}}"
+                    alt="{{ nombre === undefined ? prod.name : nombre}}">
+                <figcaption class="c-gallery__figcaption">{{ nombre === undefined ? prod.name : nombre}}</figcaption>
+            </figure>
+            <p class="c-gallery__number">${{precio === undefined ? prod.price : precio}}</p>
+            <div class="card-footer">
+                <small class="c-gallery__text">{{descripcion === undefined ? prod.description: descripcion}}</small>
+            </div>
+            <div>
+                <p-rating class="product__info--rating" readonly="true" [cancel]="false"
+                    [iconOnStyle]="{'color': '#FB8200', 'font-size': '11px'}"
+                    [iconOffStyle]="{'color':'#FB8200', 'font-size': '11px'}" [ngModel]="val"></p-rating>
+                <div>
+                    <p class="card-text">{{rating === undefined ? prod.stars: rating}}</p>
+                </div>
+                <div><button class="product__info--button" (click)="selectProduct(prod)"
+                        routerLink="/gestion">Edit</button></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="figure" *ngFor="let prod of products">
+    <figure class="product__figure">
+        <img class="product__img" src="{{imagen === undefined ? prod.image : imagen}}"
+        alt="{{ nombre === undefined ? prod.name : nombre}}">
+
+        <figcaption  class="product__figcaption">{{ nombre === undefined ? prod.name : nombre}}</figcaption>
+
+        <div class="product_info">
+            <p  class="product__info--text" >{{descripcion === undefined ? prod.description: descripcion}}</p>
+            <h3  class="product__info--price">${{precio === undefined ? prod.price : precio}}</h3>
+            <p-rating 
+                class="product__info--rating"
+                readonly="true"
+                [cancel]="false"
+                [iconOnStyle]="{'color': '#FB8200', 'font-size': '11px'}"
+                [iconOffStyle]="{'color':'#FB8200', 'font-size': '11px'}"
+                [ngModel]="val"
+            ></p-rating>
+            <span class="product__info--value">{{rating === undefined ? prod.stars: rating}}</span>
+            <a class="product__info--button" routerLink="/gestion/{{singleProduct.id}}">Editar</a>
+        </div>
+    </figure>
+</div> -->

@@ -1,0 +1,47 @@
+.c-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 6%;
+    background-color: #CCCCCC;
+    
+    &__figure{
+      margin: 16px 0;
+      text-align: center;
+      cursor: pointer;
+    }
+  
+    &__img {
+      
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+  
+    &__figcaption{
+      width: 100%;
+      font-size: 24px;
+      display: table;
+      table-layout: fixed;
+      margin-top: 4%;
+    }
+    &__text{
+      font-size: 16px;
+      text-align: center;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      display: table-cell;
+      text-transform: lowercase;
+    }
+    &__number {
+        font-size: 36px;
+        font-weight: bold;
+
+    }
+  }
+  .c-card{
+    background-color: #FFFFFF;
+    padding: 3%;
+  }
